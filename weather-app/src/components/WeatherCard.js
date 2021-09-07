@@ -3,6 +3,7 @@ import { WeatherContext } from '../App'
 
 import DayWeather from './DayWeather'
 import Header from './Header'
+import Today from './Today'
 
 function WeatherCard() {
   const { list } = useContext(WeatherContext)
@@ -10,6 +11,7 @@ function WeatherCard() {
   return (
     <div>
       <Header />
+      <Today />
       <div>
         {list.length &&
           list.map((days, index) => <DayWeather days={days} key={index} />)}

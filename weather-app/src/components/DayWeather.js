@@ -1,13 +1,13 @@
 import React from 'react'
-import moment from 'moment'
 
 import getIcon from '../icon'
 
 function DayWeather({ days }) {
+  console.log(days.day)
   return (
     <div className="card">
       <div className="day-celcius">
-        <h3>{moment(days.day).format('ddd')}</h3>
+        <h3>{days.day ? days.day.slice(0, 3) : ''}</h3>
         <h3>{Math.floor(days.tem) + '°'}</h3>
       </div>
       <div className="img-card">

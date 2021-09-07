@@ -13,8 +13,6 @@ const getIcon = (days) => {
     return 'http://openweathermap.org/img/wn/10d.png'
   else if (days.desc === 'thunderstorm')
     return 'http://openweathermap.org/img/wn/11d.png'
-  else if (days.desc.includes('snow'))
-    return 'http://openweathermap.org/img/wn/13d.png'
   else if (days.desc === 'mist')
     return 'http://openweathermap.org/img/wn/50d.png'
   else if (days.desc === 'overcast clouds')

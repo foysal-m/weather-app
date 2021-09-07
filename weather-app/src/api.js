@@ -12,7 +12,9 @@ export const fetchData = async () => {
 
     for (let i = 0; i < list.length; i += 8) {
       let temp = { day: '', tem: 0, desc: '', icon: '', main: '' }
-      temp.day = new Date(list[i + 5].dt_txt)
+      temp.day = new Date(list[i + 5].dt * 1000).toLocaleString('gb', {
+        weekday: 'long',
+      })
       temp.tem = list[i].main.temp
       temp.desc = list[i + 3].weather[0].description
       temp.icon = list[i].weather[0].icon
@@ -37,10 +39,10 @@ export const fetchToday = async () => {
       .then((data) => data)
 
     let newObj = { day: '', temp: 0, desc: '', icon: '', name: '', main: '' }
-    newObj.day = new Date(dt * 1000).toLocaleString('GB', {
+    newObj.day = new Date(dt * 1000).toLocaleString('gb', {
       weekday: 'long',
     })
-    newObj.temp = main.temp
+    newObj.temp = main.temp ? parseInt(main.temp) : 0
     newObj.main = weather[0].main
     newObj.desc = weather[0].description
     newObj.icon = weather[0].icon

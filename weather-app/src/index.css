@@ -19,13 +19,23 @@ body {
   align-items: center;
   height: 100px;
 }
+.header {
+  padding: 8px 16px;
+  background: #32353e;
+  margin: 16px 0;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
 
 .card h3 {
   margin: 10px 0;
   color: #fdfefe;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 h3 {
   margin: 10px 0;

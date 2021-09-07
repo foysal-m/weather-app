@@ -4,7 +4,7 @@ import { WeatherContext } from '../App'
 function Header() {
   const { today } = useContext(WeatherContext)
   return (
-    <div>
+    <div className="header">
       {today !== undefined && (
         <div>
           <h3>{today.name}</h3>
