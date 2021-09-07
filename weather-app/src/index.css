@@ -16,6 +16,10 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  order: 2;
+  flex-grow: 2;
 }
 
 .card h3 {
@@ -31,4 +35,19 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.w-icon {
+  height: 50px;
+  width: 60px;
+  background-color: chartreuse;
+  justify-items: right;
+  margin-right: 2px;
+}
+.img-card {
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  height: 100%;
+  padding-bottom: 8px;
+  background-color: burlywood;
 }

@@ -9,13 +9,14 @@ export const fetchData = async () => {
       .then((data) => data.list)
 
     let days = []
-    console.log(list)
+
     for (let i = 0; i < list.length; i += 8) {
-      let temp = { day: '', tem: 0, desc: '', icon: '' }
+      let temp = { day: '', tem: 0, desc: '', icon: '', main: '' }
       temp.day = new Date(list[i + 5].dt_txt)
       temp.tem = list[i].main.temp
       temp.desc = list[i + 3].weather[0].description
       temp.icon = list[i].weather[0].icon
+      temp.main = list[i + 3].weather[0].main
       days.push(temp)
     }
 
