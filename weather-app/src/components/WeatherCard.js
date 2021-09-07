@@ -13,8 +13,12 @@ function WeatherCard() {
 
   return (
     <div>
-      {list.length &&
-        list.map((day, index) => <DayWeather day={day} key={index} />)}
+      <h3>London</h3>
+      <div></div>
+      <div>
+        {list.length &&
+          list.map((days, index) => <DayWeather days={days} key={index} />)}
+      </div>
     </div>
   )
 }

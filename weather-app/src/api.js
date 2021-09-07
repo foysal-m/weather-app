@@ -11,11 +11,11 @@ export const fetchData = async () => {
     let days = []
     console.log(list)
     for (let i = 0; i < list.length; i += 8) {
-      let temp = []
-      temp.push(new Date(list[i + 5].dt_txt))
-      temp.push(list[i].main.temp)
-      temp.push(list[i + 3].weather[0].description)
-      temp.push(list[i].weather[0].icon)
+      let temp = { day: '', tem: 0, desc: '', icon: '' }
+      temp.day = new Date(list[i + 5].dt_txt)
+      temp.tem = list[i].main.temp
+      temp.desc = list[i + 3].weather[0].description
+      temp.icon = list[i].weather[0].icon
       days.push(temp)
     }
 
