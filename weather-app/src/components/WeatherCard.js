@@ -1,20 +1,15 @@
-import React, { useState, useEffect } from 'react'
-import { fetchData } from '../api'
+import React, { useContext } from 'react'
+import { WeatherContext } from '../App'
+
 import DayWeather from './DayWeather'
+import Header from './Header'
 
 function WeatherCard() {
-  const [list, setList] = useState([])
-
-  useEffect(() => {
-    fetchData()
-      .then((res) => res)
-      .then((data) => setList(data))
-  }, [])
+  const { list } = useContext(WeatherContext)
 
   return (
     <div>
-      <h3>London</h3>
-      <div></div>
+      <Header />
       <div>
         {list.length &&
           list.map((days, index) => <DayWeather days={days} key={index} />)}

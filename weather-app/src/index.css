@@ -18,8 +18,6 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 100px;
-  order: 2;
-  flex-grow: 2;
 }
 
 .card h3 {
@@ -34,20 +32,28 @@ h3 {
   color: #fdfefe;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Arial Narrow', Arial, sans-serif;
 }
 .w-icon {
   height: 50px;
   width: 60px;
-  background-color: chartreuse;
-  justify-items: right;
   margin-right: 2px;
+  justify-self: center;
 }
 .img-card {
   display: flex;
-  /* justify-content: center; */
   flex-direction: column;
   height: 100%;
   padding-bottom: 8px;
-  background-color: burlywood;
+  justify-content: center;
+  align-items: center;
+  font-size: small;
+}
+.day-celcius {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 30%;
+  font-synthesis: weight;
+  font-size: larger;
 }

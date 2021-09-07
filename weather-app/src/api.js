@@ -25,3 +25,29 @@ export const fetchData = async () => {
     console.log(error)
   }
 }
+
+export const fetchToday = async () => {
+  // Fetch weather data for today
+  // Get date, description
+  try {
+    const { dt, main, weather, name } = await fetch(
+      'http://api.openweathermap.org/data/2.5/weather?q=London,uk&units=metric&APPID=cba15a8c1f20d4f5f36d23adf48571ba',
+    )
+      .then((res) => res.json())
+      .then((data) => data)
+
+    let newObj = { day: '', temp: 0, desc: '', icon: '', name: '', main: '' }
+    newObj.day = new Date(dt * 1000).toLocaleString('GB', {
+      weekday: 'long',
+    })
+    newObj.temp = main.temp
+    newObj.main = weather[0].main
+    newObj.desc = weather[0].description
+    newObj.icon = weather[0].icon
+    newObj.name = name
+
+    return newObj
+  } catch (error) {
+    console.log(error)
+  }
+}
