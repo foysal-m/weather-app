@@ -1,13 +1,16 @@
 import React, { useContext } from 'react'
+import moment from 'moment'
 import { WeatherContext } from '../App'
 
 function Header() {
   const { today } = useContext(WeatherContext)
+  const date = new Date()
   return (
-    <div className="header">
+    <div>
       {today !== undefined && (
-        <div>
+        <div className="header">
           <h3>{today.name}</h3>
+          <div className="real-time">{moment(date).format('h:mm')} GMT </div>
           <h3>{Math.floor(today.temp) + '°'}</h3>
         </div>
       )}

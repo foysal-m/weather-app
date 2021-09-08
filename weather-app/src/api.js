@@ -1,9 +1,14 @@
+require('dotenv').config()
+
+const API_KEY = process.env.REACT_APP_API_KEY
+
 export const fetchData = async () => {
   // Fetch data for 5 day forecast
   // Get data for date, temperature, weather description
+
   try {
     const list = await fetch(
-      'http://api.openweathermap.org/data/2.5/forecast?q=London,uk&units=metric&APPID=cba15a8c1f20d4f5f36d23adf48571ba',
+      `http://api.openweathermap.org/data/2.5/forecast?q=London,uk&units=metric&APPID=${API_KEY}`,
     )
       .then((res) => res.json())
       .then((data) => data.list)
@@ -33,7 +38,7 @@ export const fetchToday = async () => {
   // Get date, description
   try {
     const { dt, main, weather, name } = await fetch(
-      'http://api.openweathermap.org/data/2.5/weather?q=London,uk&units=metric&APPID=cba15a8c1f20d4f5f36d23adf48571ba',
+      `http://api.openweathermap.org/data/2.5/weather?q=London,uk&units=metric&APPID=${API_KEY}`,
     )
       .then((res) => res.json())
       .then((data) => data)

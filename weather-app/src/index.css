@@ -27,8 +27,9 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   height: 100px;
+  width: auto;
 }
 
 .card h3 {
@@ -66,4 +67,15 @@ h3 {
   width: 30%;
   font-synthesis: weight;
   font-size: larger;
+}
+.real-time {
+  border: solid black 1px;
+  color: #fdfefe;
+  border-radius: 4px;
+  background-color: 32343f;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
