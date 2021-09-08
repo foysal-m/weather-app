@@ -3,8 +3,6 @@ import React, { useState, useEffect } from 'react'
 import WeatherCard from './components/WeatherCard'
 import { fetchData } from './api'
 import { fetchToday } from './api'
-import LinearWithValueLabel from './components/LinearWithValueLabel'
-import ProgressBar from './components/ProgressBar'
 
 export const WeatherContext = React.createContext(null)
 
@@ -24,25 +22,14 @@ function App() {
       .then((data) => setToday(data))
   }, [])
 
-  // const [timer, setTimer] = useState(0)
-  // const tick = () => {
-  //   if (timer < 60) setTimer((pre) => pre + 1)
-  //   else if (timer === 60) setTimer(0)
-  // }
-
-  // useEffect(() => {
-  //   const time = setInterval(tick, 1000)
-  //   return () => {
-  //     clearInterval(time)
-  //   }
-  // }, [])
-
   return (
     <div className="App">
       <WeatherContext.Provider
         value={{
           list,
           today,
+          setList,
+          setToday,
         }}
       >
         <WeatherCard />
