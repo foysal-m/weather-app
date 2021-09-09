@@ -9,12 +9,14 @@ function DayWeather({ days }) {
   return (
     <div className="card">
       <div className="day-celcius">
-        <h3>{days.day ? days.day.slice(0, 3) : ''}</h3>
-        <h3 className={animateTemp()}>{Math.floor(days.tem) + '°'}</h3>
+        <h3 className="day">{days.day ? days.day.slice(0, 3) : ''}</h3>
+        <h3 className={animateTemp() || 'basic'}>
+          {Math.floor(days.tem) + '°'}
+        </h3>
       </div>
       <div className="img-card">
         <img src={getIcon(days)} alt="" className="w-icon" />
-        <h3>{days.desc}</h3>
+        <h3 className="icon-desc">{days.desc}</h3>
       </div>
     </div>
   )

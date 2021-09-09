@@ -9,8 +9,8 @@ function Today() {
   return (
     <div className="card">
       <div className="day-celcius">
-        <h3>{today.day ? today.day.slice(0, 3) : ''}</h3>
-        <h3 className={animateTemp()}>
+        <h3 className="day">{today.day ? today.day.slice(0, 3) : ''}</h3>
+        <h3 className={animateTemp() || 'basic'}>
           {today.temp && Math.floor(+today.temp) + '°'}
         </h3>
       </div>

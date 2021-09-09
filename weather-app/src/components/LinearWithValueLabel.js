@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import LinearProgress from '@material-ui/core/LinearProgress'
 import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
+
 import { fetchData, fetchToday } from '../api'
 import { WeatherContext } from '../App'
 
@@ -72,20 +73,20 @@ export default function LinearWithValueLabel() {
     return () => {
       clearInterval(timer)
     }
-  }, [])
+  }, [setTimer])
 
-  useEffect(() => {
-    if (timer === 60) {
-      fetchData()
-        .then((res) => res)
-        .then((data) => setList(data))
+  // useEffect(() => {
+  //   if (timer === 60) {
+  //     fetchData()
+  //       .then((res) => res)
+  //       .then((data) => setList(data))
 
-      fetchToday()
-        .then((res) => res)
-        .then((data) => setToday(data))
-      setStyle('animate-temp')
-    }
-  }, [timer === 60])
+  //     fetchToday()
+  //       .then((res) => res)
+  //       .then((data) => setToday(data))
+  //     setStyle('animate-temp')
+  //   }
+  // }, [timer === 60])
 
   return (
     <div className={classes.root}>
