@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 
-import WeatherCard from './components/WeatherCard'
-import { fetchData } from './api'
-import { fetchToday } from './api'
+import WeatherCard from '../WeatherCard/WeatherCard'
+import { fetchData } from '../../services/api'
+import { fetchToday } from '../../services/api'
 
 export const WeatherContext = React.createContext(null)
 

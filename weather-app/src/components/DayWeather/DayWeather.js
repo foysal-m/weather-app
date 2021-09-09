@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
-import { WeatherContext } from '../App'
+import { WeatherContext } from '../App/App'
 
-import getIcon from '../icon'
+import getIcon from '../../services/icon'
 
 function DayWeather({ days }) {
   const { animateTemp } = useContext(WeatherContext)

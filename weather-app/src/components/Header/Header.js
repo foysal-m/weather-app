@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import moment from 'moment'
-import { WeatherContext } from '../App'
-import LinearWithValueLabel from './LinearWithValueLabel'
+import { WeatherContext } from '../App/App'
+import LinearWithValueLabel from '../ProgressBar/LinearWithValueLabel'
 
 function Header() {
   const { today } = useContext(WeatherContext)

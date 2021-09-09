@@ -57,6 +57,6 @@ export const fetchToday = async () => {
 
     return newObj
   } catch (error) {
-    console.log(error)
+    console.log(error.message)
   }
 }

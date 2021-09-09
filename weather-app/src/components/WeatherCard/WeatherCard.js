@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
-import { WeatherContext } from '../App'
+import { WeatherContext } from '../App/App'
 
-import DayWeather from './DayWeather'
-import Header from './Header'
-import Today from './Today'
+import DayWeather from '../DayWeather/DayWeather'
+import Header from '../Header/Header'
+import Today from '../Today/Today'
 
 function WeatherCard() {
   const { list } = useContext(WeatherContext)

@@ -5,8 +5,8 @@ import LinearProgress from '@material-ui/core/LinearProgress'
 import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
 
-import { fetchData, fetchToday } from '../api'
-import { WeatherContext } from '../App'
+import { fetchData, fetchToday } from '../../services/api'
+import { WeatherContext } from '../App/App'
 
 function LinearProgressWithLabel(props) {
   const timeLeft = 60 - props.timer
