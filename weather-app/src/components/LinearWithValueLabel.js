@@ -8,16 +8,22 @@ import { fetchData, fetchToday } from '../api'
 import { WeatherContext } from '../App'
 
 function LinearProgressWithLabel(props) {
-  const timeLeft = 60 - props.value
+  const timeLeft = 60 - props.timer
   return (
-    <Box display="flex" alignItems="center" flexDirection="column" width="50%">
+    <Box
+      display="flex"
+      alignItems="left"
+      flexDirection="column"
+      width="50%"
+      justifyContent="left"
+    >
       <Box minWidth={35} color="#999a9c">
         <Typography variant="body2" color={useStyles.colorPrimary}>
           {' '}
           Reloading in {`${Math.round(timeLeft)}`}s
         </Typography>
       </Box>
-      <Box width="100%" mr={1}>
+      <Box width="100%" mr={1} justifyContent="left">
         <LinearProgress variant="determinate" {...props} />
       </Box>
     </Box>
@@ -35,28 +41,35 @@ LinearProgressWithLabel.propTypes = {
 const useStyles = makeStyles({
   root: {
     '& .MuiLinearProgress-colorPrimary': {
-      backgroundColor: '#32353c',
+      backgroundColor: 'rgba(50,50,60,255)',
+      height: '20px',
+      borderRadius: '10px',
+      width: '920px',
     },
     '& .MuiLinearProgress-barColorPrimary': {
       backgroundColor: '#f49c07',
+      height: '20px',
+      borderRadius: '10px',
+      border: 'rgba(43, 46, 53, 255)',
+      width: '920px',
     },
-    width: '95%',
-    height: 10,
-    borderRadius: 5,
-    marginTop: 8,
-    marginBottom: 20,
+    paddingLeft: 0,
   },
 })
 
 export default function LinearWithValueLabel() {
   const [progress, setProgress] = useState(0)
+  const [timer, setTimer] = useState(0)
   const { setList, setToday } = useContext(WeatherContext)
 
   const classes = useStyles()
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setProgress((prevProgress) => (prevProgress >= 60 ? 0 : prevProgress + 1))
+      setProgress((prevProgress) =>
+        prevProgress >= 100 ? 1.67 : prevProgress + 1.7,
+      )
+      setTimer((prevTimer) => (prevTimer >= 60 ? 0 : prevTimer + 1))
     }, 1000)
 
     return () => {
@@ -78,7 +91,7 @@ export default function LinearWithValueLabel() {
 
   return (
     <div className={classes.root}>
-      <LinearProgressWithLabel value={progress} />
+      <LinearProgressWithLabel value={progress} timer={timer} />
     </div>
   )
 }

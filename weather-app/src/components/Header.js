@@ -22,9 +22,9 @@ function Header() {
               <span className="dot dot-basic"></span>
             </div>
             <h3>{Math.floor(today.temp) + '°'}</h3>
-            <div>
-              <LinearWithValueLabel />
-            </div>
+          </div>
+          <div className="bar">
+            <LinearWithValueLabel />
           </div>
         </div>
       )}

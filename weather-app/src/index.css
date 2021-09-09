@@ -7,6 +7,10 @@ body {
   width: 960px;
   margin: 0 auto;
 }
+.bar {
+  width: 98%;
+  margin: 5px;
+}
 
 .card {
   padding: 8px 16px;
@@ -19,17 +23,23 @@ body {
   align-items: center;
   height: 100px;
 }
-.header {
+.header-with-bar {
   padding: 8px 16px;
   background: #32353e;
   margin: 16px 0;
   border-radius: 2px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
   height: 100px;
   width: auto;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .card h3 {
@@ -69,11 +79,11 @@ h3 {
   font-size: larger;
 }
 .real-time {
-  border: solid black 1px;
+  border: solid 1px rgba(43, 46, 53, 255);
   color: #fdfefe;
   border-radius: 4px;
-  background-color: 32343f;
-  padding: 15px 32px;
+  background-color: #32343f;
+  padding: 10px 25px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -87,20 +97,6 @@ h3 {
   margin: 15px 0;
   height: 30px;
   width: 300px;
-}
-
-.progress-done {
-  background: #f19b0f;
-  box-shadow: 0 3px 3px -5px #f2709c, 0 2px 5px #f2709c;
-  border-radius: 20px;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 0;
-  opacity: 0;
-  transition: 1s ease 0.3s;
 }
 
 .dot {
