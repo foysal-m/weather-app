@@ -10,7 +10,9 @@ export const fetchData = async () => {
     const list = await fetch(
       `http://api.openweathermap.org/data/2.5/forecast?q=London,uk&units=metric&APPID=${API_KEY}`,
     )
-      .then((res) => res.json())
+      .then((res) => {
+        return res.json()
+      })
       .then((data) => data.list)
 
     let days = []

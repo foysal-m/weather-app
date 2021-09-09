@@ -31,10 +31,6 @@ function LinearProgressWithLabel(props) {
 }
 
 LinearProgressWithLabel.propTypes = {
-  /**
-   * The value of the progress indicator for the determinate and buffer variants.
-   * Value between 0 and 100.
-   */
   value: PropTypes.number.isRequired,
 }
 
@@ -59,15 +55,16 @@ const useStyles = makeStyles({
 
 export default function LinearWithValueLabel() {
   const [progress, setProgress] = useState(0)
-  const [timer, setTimer] = useState(0)
-  const { setList, setToday } = useContext(WeatherContext)
+
+  const { setList, setToday, setStyle, setTimer, timer } =
+    useContext(WeatherContext)
 
   const classes = useStyles()
 
   useEffect(() => {
     const timer = setInterval(() => {
       setProgress((prevProgress) =>
-        prevProgress >= 100 ? 1.67 : prevProgress + 1.7,
+        prevProgress >= 100 ? 0 : prevProgress + 1.67,
       )
       setTimer((prevTimer) => (prevTimer >= 60 ? 0 : prevTimer + 1))
     }, 1000)
@@ -77,17 +74,18 @@ export default function LinearWithValueLabel() {
     }
   }, [])
 
-  // useEffect(() => {
-  //   if (progress === 60) {
-  //     fetchData()
-  //       .then((res) => res)
-  //       .then((data) => setList(data))
+  useEffect(() => {
+    if (timer === 60) {
+      fetchData()
+        .then((res) => res)
+        .then((data) => setList(data))
 
-  //     fetchToday()
-  //       .then((res) => res)
-  //       .then((data) => setToday(data))
-  //   }
-  // }, [progress === 60])
+      fetchToday()
+        .then((res) => res)
+        .then((data) => setToday(data))
+      setStyle('animate-temp')
+    }
+  }, [timer === 60])
 
   return (
     <div className={classes.root}>

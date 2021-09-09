@@ -9,6 +9,9 @@ export const WeatherContext = React.createContext(null)
 function App() {
   const [list, setList] = useState([])
   const [today, setToday] = useState({})
+  const [error, setError] = useState(null)
+  const [style, setStyle] = useState('')
+  const [timer, setTimer] = useState(0)
 
   useEffect(() => {
     fetchData()
@@ -22,6 +25,14 @@ function App() {
       .then((data) => setToday(data))
   }, [])
 
+  function animateTemp() {
+    if (style === 'animate-temp' && timer === 60) {
+      return 'animate-temp'
+    } else if (timer >= 5) {
+      return ''
+    }
+  }
+
   return (
     <div className="App">
       <WeatherContext.Provider
@@ -30,6 +41,11 @@ function App() {
           today,
           setList,
           setToday,
+          setStyle,
+          style,
+          timer,
+          setTimer,
+          animateTemp,
         }}
       >
         <WeatherCard />
