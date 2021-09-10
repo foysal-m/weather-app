@@ -7,6 +7,7 @@ import Box from '@material-ui/core/Box'
 
 import { fetchData, fetchToday } from '../../services/api'
 import { WeatherContext } from '../App/App'
+import useUpdateEffect from '../../hooks/useUpdateEffect'
 
 function LinearProgressWithLabel(props) {
   const timeLeft = 60 - props.timer
@@ -55,7 +56,7 @@ const useStyles = makeStyles({
 export default function LinearWithValueLabel() {
   const [progress, setProgress] = useState(0)
 
-  const { setList, setToday, setStyle, setTimer, timer } =
+  const { setList, setToday, setTimer, timer, setStyle } =
     useContext(WeatherContext)
 
   const classes = useStyles()
@@ -73,7 +74,7 @@ export default function LinearWithValueLabel() {
     }
   }, [setTimer])
 
-  useEffect(() => {
+  useUpdateEffect(() => {
     if (timer === 60) {
       fetchData()
         .then((res) => res)

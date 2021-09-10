@@ -6,33 +6,38 @@ export const fetchData = async () => {
   // Fetch data for 5 day forecast
   // Get data for date, temperature, weather description
 
-  try {
-    const list = await fetch(
-      `http://api.openweathermap.org/data/2.5/forecast?q=London,uk&units=metric&APPID=${API_KEY}`,
-    )
-      .then((res) => {
+  let list
+  let error
+  await fetch(
+    `http://api.openweathermap.org/data/2.5/forecast?q=London,uk&units=metric&APPID=${API_KEY}`,
+  )
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error('could not fetch the data from that resource')
+      } else {
         return res.json()
-      })
-      .then((data) => data.list)
+      }
+    })
+    .then((data) => (list = data.list))
+    .catch((err) => {
+      error = err.message
+    })
 
-    let days = []
+  let days = []
 
-    for (let i = 0; i < list.length; i += 8) {
-      let temp = { day: '', tem: 0, desc: '', icon: '', main: '' }
-      temp.day = new Date(list[i + 5].dt * 1000).toLocaleString('gb', {
-        weekday: 'long',
-      })
-      temp.tem = list[i].main.temp
-      temp.desc = list[i + 3].weather[0].description
-      temp.icon = list[i].weather[0].icon
-      temp.main = list[i + 3].weather[0].main
-      days.push(temp)
-    }
-
-    return days
-  } catch (error) {
-    console.log(error)
+  for (let i = 0; i < list.length; i += 8) {
+    let temp = { day: '', tem: 0, desc: '', icon: '', main: '' }
+    temp.day = new Date(list[i + 5].dt * 1000).toLocaleString('gb', {
+      weekday: 'long',
+    })
+    temp.tem = list[i].main.temp
+    temp.desc = list[i + 3].weather[0].description
+    temp.icon = list[i].weather[0].icon
+    temp.main = list[i + 3].weather[0].main
+    days.push(temp)
   }
+
+  return days.length ? days : error
 }
 
 export const fetchToday = async () => {

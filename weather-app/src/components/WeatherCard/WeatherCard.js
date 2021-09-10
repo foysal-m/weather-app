@@ -9,14 +9,14 @@ function WeatherCard() {
   const { list } = useContext(WeatherContext)
 
   return (
-    <div>
+    <React.Fragment>
       <Header />
       <Today />
-      <div>
+      <React.Fragment>
         {list.length &&
           list.map((days, index) => <DayWeather days={days} key={index} />)}
-      </div>
-    </div>
+      </React.Fragment>
+    </React.Fragment>
   )
 }
 

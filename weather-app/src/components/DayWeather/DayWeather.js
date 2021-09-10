@@ -2,11 +2,11 @@ import React, { useContext } from 'react'
 import { WeatherContext } from '../App/App'
 
 import getIcon from '../../services/icon'
-import './DayWeather.css'
+
+import '../../index.css'
 
 function DayWeather({ days }) {
   const { animateTemp } = useContext(WeatherContext)
-
   return (
     <div className="card">
       <div className="day-celcius">
