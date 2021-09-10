@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import WeatherCard from '../WeatherCard/WeatherCard'
 import { fetchData } from '../../services/api'
 import { fetchToday } from '../../services/api'
-
+import './App.css'
 export const WeatherContext = React.createContext(null)
 
 function App() {

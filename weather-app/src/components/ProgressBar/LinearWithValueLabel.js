@@ -15,7 +15,6 @@ function LinearProgressWithLabel(props) {
       display="flex"
       alignItems="left"
       flexDirection="column"
-      width="50%"
       justifyContent="left"
     >
       <Box minWidth={35} color="#999a9c">
@@ -50,7 +49,6 @@ const useStyles = makeStyles({
       border: 'rgba(43, 46, 53, 255)',
       width: '920px',
     },
-    paddingLeft: 0,
   },
 })
 
@@ -65,7 +63,7 @@ export default function LinearWithValueLabel() {
   useEffect(() => {
     const timer = setInterval(() => {
       setProgress((prevProgress) =>
-        prevProgress >= 100 ? 0 : prevProgress + 1.67,
+        prevProgress >= 100 ? 0 : prevProgress + 1.7,
       )
       setTimer((prevTimer) => (prevTimer >= 60 ? 0 : prevTimer + 1))
     }, 1000)
@@ -75,18 +73,18 @@ export default function LinearWithValueLabel() {
     }
   }, [setTimer])
 
-  // useEffect(() => {
-  //   if (timer === 60) {
-  //     fetchData()
-  //       .then((res) => res)
-  //       .then((data) => setList(data))
+  useEffect(() => {
+    if (timer === 60) {
+      fetchData()
+        .then((res) => res)
+        .then((data) => setList(data))
 
-  //     fetchToday()
-  //       .then((res) => res)
-  //       .then((data) => setToday(data))
-  //     setStyle('animate-temp')
-  //   }
-  // }, [timer === 60])
+      fetchToday()
+        .then((res) => res)
+        .then((data) => setToday(data))
+      setStyle('animate-temp')
+    }
+  }, [timer === 60])
 
   return (
     <div className={classes.root}>

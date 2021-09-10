@@ -1,0 +1,12 @@
+.App {
+  width: 960px;
+  margin: 0 auto;
+}
+
+h3 {
+  margin: 10px 0;
+  color: #fdfefe;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: normal;
+}

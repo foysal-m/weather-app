@@ -1,0 +1,64 @@
+.w-icon {
+  height: 60px;
+  width: 60px;
+  margin-right: 2px;
+  filter: brightness(0) invert(1);
+}
+.card {
+  padding: 8px 16px;
+  background: #5c5d61;
+  margin: 16px 0;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+.card h3 {
+  margin: 10px 0;
+  color: #fdfefe;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.img-card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  align-content: center;
+  font-size: small;
+  margin-bottom: 15px;
+  font-weight: normal;
+}
+.day-celcius {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 30%;
+  font-size: larger;
+}
+.day {
+  font-weight: normal;
+}
+
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-4rem) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+.animate-temp {
+  animation: pop-in 0.6s ease-out forwards;
+  font-size: xx-large;
+  font-weight: normal;
+}
+.basic {
+  font-size: xx-large;
+  font-weight: normal;
+}

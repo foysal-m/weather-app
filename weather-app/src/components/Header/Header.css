@@ -1,28 +1,8 @@
-body {
-  margin: 0;
-  font-family: 'Arial Narrow', Arial, sans-serif;
-  background-color: #101012;
-}
-/* .App {
-  width: 960px;
-  margin: 0 auto;
-}
 .bar {
   width: 98%;
   margin: 2px;
 }
 
-.card {
-  padding: 8px 16px;
-  background: #5c5d61;
-  margin: 16px 0;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  height: 100px;
-}
 .header-with-bar {
   padding: 8px 16px;
   background: #32353e;
@@ -35,61 +15,20 @@ body {
   height: 100px;
   width: auto;
 }
+
 .header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
 }
+
 .name-date {
   display: flex;
   width: 50%;
   justify-content: space-between;
 }
 
-.card h3 {
-  margin: 10px 0;
-  color: #fdfefe;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-h3 {
-  margin: 10px 0;
-  color: #fdfefe;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: normal;
-}
-.w-icon {
-  height: 60px;
-  width: 60px;
-  margin-right: 2px;
-  filter: brightness(0) invert(1);
-}
-
-.img-card {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  align-content: center;
-  font-size: small;
-  margin-bottom: 15px;
-  font-weight: normal;
-}
-.icon-desc {
-  margin-top: 0px;
-}
-.day-celcius {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 30%;
-  font-size: larger;
-}
-.day {
-  font-weight: normal;
-}
 .location {
   font-size: xx-large;
 }
@@ -130,7 +69,7 @@ h3 {
 }
 
 .dot {
-  animation: blink 4s infinite;
+  animation: blink 8s infinite;
 }
 .dot--delayed {
   animation: blink 2s infinite 4s;
@@ -142,7 +81,7 @@ h3 {
   animation-delay: 4s;
 }
 
-@keyframes choppyBlink {
+@keyframes choppy-blink {
   from {
     opacity: 0.5;
   }
@@ -164,24 +103,4 @@ h3 {
   .dot {
     animation: linear;
   }
-/* }* */
-/*
-@keyframes pop-in {
-  0% {
-    opacity: 0;
-    transform: translateY(-4rem) scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform: none;
-  }
 }
-.animate-temp {
-  animation: pop-in 0.6s ease-out forwards;
-  font-size: xx-large;
-  font-weight: normal;
-}
-.basic {
-  font-size: xx-large;
-  font-weight: normal;
-} */
